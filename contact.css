@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at 50% 30%, #5f2c82, #2b1a4b 60%, #0f0c29);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header h2 {
+   font-size: clamp(2.5rem, 8vw, 3.5rem); 
+    font-weight: 800;
+    margin-bottom: 15px;
+    color:rgb(255, 255, 255);
+}
+
+.header p {
+    max-width: 600px;
+  margin: auto;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.input-group input, 
+.input-group textarea {
+    background: #111827;
+    border: 1px solid #1f2937;
+    padding: 12px;
+    border-radius: 6px;
+    color: rgb(255, 255, 255);
+    outline: none;
+    transition: border 0.3s;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: #7c3aed;
+}
+
+.submit-btn {
+    background: #7c3aed; /* Vibrant purple */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: #6d28d9;
+}
+
+/* Info Card Styles */
+.info-card {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.info-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Container for the list */
+.social-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+/* Individual list item styling and animation */
+.social-links li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: transparent;
+    
+    /* Smooth transition for all properties */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    left: 0;
+}
+
+/* Hover Animation State */
+.social-links li:hover {
+    color: #ffffff;
+    background: rgba(124, 58, 237, 0.1); /* Subtle purple tint */
+    left: 10px; /* Slides the text slightly to the right */
+    box-shadow: -2px 0 0 #7c3aed; /* Adds a purple accent border on the left */
+}
+
+.social-links li a {
+    text-decoration: none;   /* removes underline */
+    color: inherit;          /* keeps your original text color */
+    outline: none;           /* removes click outline */
+    -webkit-tap-highlight-color: transparent;
+}
+
+.social-links li a:focus,
+.social-links li a:active {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Icon-specific animation */
+.social-links li i {
+    width: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links li:hover i {
+    transform: scale(1.2) rotate(-5deg); /* Bounces and tilts the icon */
+    color: #a78bfa; /* Brightens the icon color */
+}
+
+/* Optional: Active click effect */
+.social-links li:active {
+    transform: scale(0.95);
+    transition: 0.1s;
+}
+
+.availability {
+    border-top: 1px solid #1e293b;
+    padding-top: 20px;
+}
+
+.avail-title {
+    color: #818cf8;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.availability p:last-child {
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+/* Footer Styles */
+.footer {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #6b7280;
+    border-top: 1px solid #111827;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-code {
+    background: #7c3aed;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.footer-center span { font-weight: bold; }
+.react { color: #61dafb; }
+.node { color: #68a063; }
+.express { color: #facc15; }
+.mongo { color: #10b981; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
